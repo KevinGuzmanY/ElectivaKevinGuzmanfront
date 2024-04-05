@@ -1,0 +1,24 @@
+
+<app-header></app-header>
+<div id="backgraundrow" class="row">
+  <div  id="buttonsColumn" class="col offset-3">
+    <div id="buttonsContainer">
+      <div class="container">
+        <button (click)="seeList()" id="buttonProductList" class="btn btn-outline-light" data-mdb-ripple-color="dark">See Product List</button>
+        <button (click)="newProduct()" id="buttonnewProduct" class="btn btn-outline-light" data-mdb-ripple-color="dark">New Product</button>
+        <button (click)="supplyProduct()" id="buttonAbastecer" class="btn btn-outline-light" data-mdb-ripple-color="dark">Abastecer Producto</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr id="separador" >
+<main>
+<div id="backgraund" class="img-fluid">
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+</main>
+
+<app-footer></app-footer>
+

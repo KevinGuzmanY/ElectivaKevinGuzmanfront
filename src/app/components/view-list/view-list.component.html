@@ -1,0 +1,39 @@
+<div  class="row">
+<div class="col-7 offset-1">
+  <div class="card">
+    <div class="card-header">
+      <h3>Productos</h3>
+    </div>
+    <div class="card-body text-white">
+      <table class="table table-hover text-white">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Valor</th>
+              <th>Existencias</th>
+              <th>Balance del producto</th>
+            </tr>
+          </thead>
+        <thead>
+            <tr *ngFor="let producto of productos" class="text-center text-white">
+              <td>{{producto.id}}</td>
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.valor}}</td>
+              <td>{{producto.existencias}}</td>
+              <td>{{producto.balance}}</td>
+              <td>
+                <button (click)="editar(producto)" class="btn btn-warning">Editar</button>
+                <button (click)="delete(producto.id)" class="btn btn-danger">Eliminar</button>
+              </td>
+            </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="col">
+  <app-infocard></app-infocard>
+</div>
+
+</div>

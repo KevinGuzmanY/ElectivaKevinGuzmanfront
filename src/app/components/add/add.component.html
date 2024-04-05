@@ -1,0 +1,31 @@
+<div class="row">
+<div class="col-7 offset-1">
+  <div class="card">
+    <div class="card-header">
+      <h3>Crear Producto</h3>
+    </div>
+    <div class="card-body text-white">
+      <form>
+      <div class="form-group col-10 offset-1">
+        <label for="idInput">ID</label>
+        <input  [(ngModel)]="producto.id" [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="idInput">
+      </div>
+      <div class="form-group col-10 offset-1">
+          <label for="nombreInput">NOMBRE</label>
+          <input [(ngModel)]="producto.nombre" [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="nombreInput">
+      </div>
+      <div class="form-group col-10 offset-1">
+          <label for="valorInput">VALOR</label>
+          <input [(ngModel)]="producto.valor" [ngModelOptions]="{standalone: true}"  class="form-control" type="text" id="valorInput">
+      </div>
+      <div id="botonCrear">
+      <button (click)="crear()" class="btn btn-warning">Crear</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <div class="col-4">
+    <app-infocard></app-infocard>
+  </div>
+</div>

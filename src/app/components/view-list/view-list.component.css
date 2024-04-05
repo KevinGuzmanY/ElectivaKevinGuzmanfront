@@ -1,0 +1,17 @@
+
+.card-header>h3{
+  margin-left: 46px;
+}
+.card-header{
+  padding: 0;
+}
+.btn-danger{
+  margin-left: 5px;
+}
+tr{
+  text-align: center;
+}
+.card-body{
+  background-color: rgb(24,25,26);
+}
+

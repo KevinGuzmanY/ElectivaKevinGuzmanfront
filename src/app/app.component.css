@@ -1,0 +1,25 @@
+
+#buttonnewProduct,#buttonAbastecer{
+  margin-left: 5px;
+}
+#buttonProductList{
+  margin-left: 62px;
+}
+#buttonsContainer{
+  margin-left: 45px;
+}
+#backgraund{
+  background-image: url("/assets/3.png");
+  padding-top: 40px;
+  padding-bottom: 70px;
+}
+#backgraundrow{
+  background-color: #23242a;
+}
+#buttonsColumn{
+  padding-bottom: 20px;
+  overflow-x: hidden;
+}
+#separador{
+  margin: 0;
+}

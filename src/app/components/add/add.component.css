@@ -1,0 +1,25 @@
+
+.card-header>h3{
+  margin-left: 46px;
+}
+.card-header{
+  padding: 0;
+}
+.btn-danger{
+  margin-left: 5px;
+}
+tr{
+  text-align: center;
+}
+#botonCrear{
+  margin-left: 60px;
+  margin-top: 10px;
+}
+.btn-success{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.card-body{
+  background-color: rgb(24,25,26);
+}
+
