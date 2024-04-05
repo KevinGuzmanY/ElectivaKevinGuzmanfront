@@ -2,19 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                bat 'npm install'
-                bat 'ng build --prod'
-            }
-        }
 
         stage('Docker') {
             steps {
-                script {
-                    dockerImage = docker.build("my-app:${env.BUILD_ID}")
-                }
+              bat 'docker build -t nombre_imagen .'
+              bat 'docker run -p 8081:8081 nombre_imagen'
             }
         }
-    }
+}
+
 }
