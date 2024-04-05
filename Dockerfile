@@ -10,9 +10,6 @@ COPY . .
 # Instala Angular CLI
 RUN npm install -g @angular/cli@11.2.12
 
-# Instala las dependencias del proyecto
-RUN npm install
-
 # Compila la aplicación Angular
 RUN ng build --prod
 
@@ -32,4 +29,4 @@ RUN npm install -g http-server
 EXPOSE 8081
 
 # Comando para iniciar http-server y servir la aplicación
-CMD ["http-server", "-p", "8080", "-o"]
+CMD ["http-server", "-p", "8081", "-o"]
