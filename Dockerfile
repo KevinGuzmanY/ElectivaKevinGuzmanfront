@@ -30,3 +30,5 @@ EXPOSE 8081
 
 # Comando para iniciar http-server y servir la aplicación
 CMD ["http-server", "-p", "8081", "-o"]
+
+
