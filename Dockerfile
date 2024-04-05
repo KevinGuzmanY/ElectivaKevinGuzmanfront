@@ -10,6 +10,8 @@ COPY . .
 # Instala Angular CLI
 RUN npm install -g @angular/cli@11.2.12
 
+RUN npm install
+
 # Compila la aplicación Angular
 RUN ng build --prod
 
