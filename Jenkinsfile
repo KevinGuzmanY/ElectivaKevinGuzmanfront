@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Stop Docker Container') {
+        stage('Stop and Remove Docker Container') {
             steps {
                 script {
                     bat 'docker stop nombre_contenedor || exit 0'
@@ -11,12 +10,14 @@ pipeline {
                 }
             }
         }
+
         stage('Docker') {
             steps {
-              bat 'docker build -t nombre_imagen .'
-              bat 'docker run -d -p 8081:8081 nombre_imagen'
+                bat 'docker build -t nombre_imagen .'
+
+                bat(script: 'docker run -d -p 8081:8081 --name nombre_contenedor nombre_imagen', returnStdout: true).trim()
+
             }
         }
-}
-
+    }
 }
