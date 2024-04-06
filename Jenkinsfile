@@ -10,7 +10,6 @@ pipeline {
                 }
             }
         }
-
         stage('Docker') {
             steps {
                 bat 'docker build -t nombre_imagen .'
