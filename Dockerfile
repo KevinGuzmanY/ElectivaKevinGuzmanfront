@@ -1,33 +1,25 @@
-# Usa una imagen base de Node.js
+# Use a Node.js base image for the build stage
 FROM node:10.13.0 as build-stage
 
-# Establece el directorio de trabajo dentro del contenedor
+# Define working directory
 WORKDIR /app
 
-# Copia los archivos del proyecto al directorio de trabajo
-COPY . .
+COPY . ./
 
 # Instala Angular CLI
 RUN npm install -g @angular/cli@11.2.12
 
+# Install dependencies
 RUN npm install
 
-# Compila la aplicación Angular
-RUN ng build --prod
+# Build the Angular application
+RUN npm run build --prod
 
-# Segunda etapa de la construcción para el despliegue
-FROM node:alpine as deploy-stage
+# Use nginx server to deliver the application
+FROM nginx:alpine
 
-# Establece el directorio de trabajo para la etapa de despliegue
-WORKDIR /app
+# Copy built files from the build stage to nginx directory
+COPY --from=build-stage /app/dist/Fproject2/ /usr/share/nginx/html
 
-# Copia los archivos compilados del build-stage a la etapa de despliegue
-COPY --from=build-stage /app/dist /app
-
-# Exponer el puerto en el que se ejecutará la aplicación Angular
-EXPOSE 8081
-
-# Comando para iniciar http-server y servir la aplicación
-CMD ["ng", "serve", "--port", "8081"]
-
-
+# Replace the default nginx configuration with custom configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
