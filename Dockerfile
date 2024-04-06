@@ -24,13 +24,10 @@ WORKDIR /app
 # Copia los archivos compilados del build-stage a la etapa de despliegue
 COPY --from=build-stage /app/dist /app
 
-# Instala http-server para servir la aplicación
-RUN npm install -g http-server
-
 # Exponer el puerto en el que se ejecutará la aplicación Angular
 EXPOSE 8081
 
 # Comando para iniciar http-server y servir la aplicación
-CMD ["http-server", "-p", "8081", "-o"]
+CMD ["ng", "serve", "--port", "8081"]
 
 
