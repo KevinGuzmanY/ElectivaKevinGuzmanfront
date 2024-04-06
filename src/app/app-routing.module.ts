@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'edit', component: EditComponent},
   {path: 'add', component: AddComponent},
   {path: 'supply', component: SupplyComponent},
+  { path: '**', redirectTo: '/list' }
 ];
 
 @NgModule({
