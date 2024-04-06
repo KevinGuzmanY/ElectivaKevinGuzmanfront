@@ -7,6 +7,7 @@ pipeline {
             steps {
                 script {
                     bat 'docker stop nombre_contenedor || exit 0'
+                    bat 'docker rm nombre_contenedor || exit 0'
                 }
             }
         }
