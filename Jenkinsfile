@@ -10,9 +10,13 @@ pipeline {
                 }
             }
         }
-        stage('Docker') {
+        stage('Build') {
+                    steps {
+                        bat 'docker build -t nombre_imagen .'
+                          }
+                    }
+        stage('Deploy') {
             steps {
-                bat 'docker build -t nombre_imagen .'
                 script {
                     bat 'docker run -d -p 8081:8081 --name nombre_contenedor nombre_imagen'
                 }
